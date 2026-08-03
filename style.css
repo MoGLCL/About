@@ -1,0 +1,809 @@
+/* ==========================================================================
+   MENNA SULTAN PORTFOLIO - HERO SECTION STYLES
+   Style: Modern, Minimal, Premium, Creative, Glassmorphism, 2026 UI Style
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. DESIGN SYSTEM & CSS VARIABLES
+   -------------------------------------------------------------------------- */
+:root {
+    /* Color Palette (Dark Theme Default) */
+    --color-bg: #0F172A;
+    --color-card: #1E293B;
+    --color-primary: #7C3AED;
+    --color-accent: #22D3EE;
+    --color-text: #F8FAFC;
+    --color-gray: #94A3B8;
+
+    /* RGB Components for Glassmorphism & Transparencies */
+    --primary-rgb: 124, 58, 237;
+    --accent-rgb: 34, 211, 238;
+    --card-rgb: 30, 41, 59;
+
+    /* Font Family */
+    --font-main: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+
+    /* Transitions & Easing */
+    --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-normal: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-bounce: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+    /* Shadows & Glows */
+    --shadow-soft: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+    --shadow-glass: 0 20px 40px rgba(0, 0, 0, 0.4);
+    --glow-primary: 0 0 35px rgba(var(--primary-rgb), 0.45);
+    --glow-accent: 0 0 35px rgba(var(--accent-rgb), 0.45);
+
+    /* Borders & Radius */
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --radius-full: 9999px;
+    --border-glass: 1px solid rgba(248, 250, 252, 0.08);
+}
+
+/* --------------------------------------------------------------------------
+   LIGHT THEME OVERRIDE (iOS 26 Frosted Glass White & Soft Rose Palette)
+   -------------------------------------------------------------------------- */
+[data-theme="light"] {
+    --color-bg: #FFF3F8;
+    --color-card: rgba(255, 255, 255, 0.68);
+    --color-primary: #F43F5E;
+    --color-accent: #FB7185;
+    --color-text: #270614;
+    --color-gray: #4C0519;
+
+    --primary-rgb: 244, 63, 94;
+    --accent-rgb: 251, 113, 133;
+    --card-rgb: 255, 255, 255;
+
+    --shadow-soft: 0 10px 30px -10px rgba(244, 63, 94, 0.15);
+    --shadow-glass: 0 20px 45px rgba(244, 63, 94, 0.15);
+    --glow-primary: 0 0 35px rgba(244, 63, 94, 0.3);
+    --glow-accent: 0 0 35px rgba(251, 113, 133, 0.3);
+    --border-glass: 1px solid rgba(255, 255, 255, 0.85);
+}
+
+/* Light Mode Profile Card - Authentic iOS 26 Frosted Glass */
+[data-theme="light"] .profile-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.72) 0%, rgba(253, 224, 237, 0.5) 100%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(25px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(25px) saturate(180%) !important;
+    box-shadow: 0 20px 50px rgba(244, 63, 94, 0.12), inset 0 1px 2px rgba(255, 255, 255, 0.95) !important;
+}
+
+[data-theme="light"] .profile-card:hover {
+    box-shadow: 0 25px 60px rgba(244, 63, 94, 0.2), inset 0 1px 2px rgba(255, 255, 255, 1) !important;
+}
+
+[data-theme="light"] .card-border-glow {
+    background: linear-gradient(135deg, rgba(251, 113, 133, 0.4), rgba(255, 255, 255, 0.9) 50%, rgba(244, 63, 94, 0.3)) !important;
+    opacity: 0.85;
+}
+
+[data-theme="light"] .glass-shine {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 60%) !important;
+}
+
+/* Avatar Circle & Glow Ring in Light Mode */
+[data-theme="light"] .avatar-circle {
+    background: linear-gradient(135deg, #FFFFFF 0%, #FCE7F3 100%) !important;
+    border: 3px solid rgba(255, 255, 255, 0.95) !important;
+    box-shadow: inset 0 0 15px rgba(244, 63, 94, 0.12), 0 10px 25px rgba(244, 63, 94, 0.2) !important;
+}
+
+[data-theme="light"] .avatar-glowing-ring {
+    background: conic-gradient(from 0deg, #F43F5E, #FB7185, #F472B6, #F43F5E) !important;
+    opacity: 0.85;
+}
+
+/* Floating Skill Cards - Clean Frosted iOS Pill */
+[data-theme="light"] .skill-card {
+    background: rgba(255, 255, 255, 0.82) !important;
+    border: 1px solid rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(16px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+    box-shadow: 0 10px 25px rgba(244, 63, 94, 0.12), 0 2px 6px rgba(0, 0, 0, 0.04) !important;
+}
+
+[data-theme="light"] .skill-card:hover {
+    background: rgba(255, 255, 255, 0.98) !important;
+    border-color: rgba(244, 63, 94, 0.5) !important;
+    box-shadow: 0 15px 35px rgba(244, 63, 94, 0.22) !important;
+}
+
+[data-theme="light"] .skill-name {
+    color: #4C0519 !important; /* High contrast sharp dark rose text */
+    font-weight: 700 !important;
+}
+
+[data-theme="light"] .skill-icon {
+    background: rgba(244, 63, 94, 0.1) !important;
+}
+
+[data-theme="light"] .html-icon { color: #E11D48 !important; }
+[data-theme="light"] .css-icon { color: #2563EB !important; }
+[data-theme="light"] .js-icon { color: #D97706 !important; }
+[data-theme="light"] .php-icon { color: #6D28D9 !important; }
+[data-theme="light"] .csharp-icon { color: #059669 !important; }
+[data-theme="light"] .vibe-icon { color: #E11D48 !important; }
+
+/* Main Typography & Gradient Text */
+[data-theme="light"] .hero-name {
+    color: #270614 !important;
+}
+
+[data-theme="light"] .text-gradient {
+    background: linear-gradient(135deg, #E11D48 0%, #F43F5E 50%, #FB7185 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+[data-theme="light"] .role-prefix {
+    color: #881337 !important;
+}
+
+[data-theme="light"] .typing-text {
+    background: linear-gradient(90deg, #E11D48, #F43F5E) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+[data-theme="light"] .hero-description {
+    color: #4C0519 !important;
+    font-weight: 450 !important;
+}
+
+/* Eye-Resting Modern Buttons */
+[data-theme="light"] .btn-primary {
+    background: linear-gradient(135deg, #F43F5E 0%, #E11D48 100%) !important;
+    color: #FFFFFF !important;
+    border: 1px solid rgba(255, 255, 255, 0.4) !important;
+    box-shadow: 0 10px 25px -4px rgba(225, 29, 72, 0.4) !important;
+}
+
+[data-theme="light"] .btn-primary::before {
+    background: linear-gradient(135deg, #E11D48 0%, #BE185D 100%) !important;
+}
+
+[data-theme="light"] .btn-primary:hover {
+    box-shadow: 0 15px 35px -4px rgba(225, 29, 72, 0.6) !important;
+}
+
+[data-theme="light"] .btn-secondary {
+    background: rgba(255, 255, 255, 0.85) !important;
+    color: #E11D48 !important;
+    border: 1px solid rgba(244, 63, 94, 0.3) !important;
+    box-shadow: 0 8px 20px rgba(244, 63, 94, 0.08) !important;
+}
+
+[data-theme="light"] .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.98) !important;
+    border-color: #E11D48 !important;
+    color: #9F1239 !important;
+    box-shadow: 0 12px 25px rgba(244, 63, 94, 0.18) !important;
+}
+
+/* --------------------------------------------------------------------------
+   2. BASE RESET & SECTION CONTAINMENT
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Scoped Hero Section */
+.hero-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    background-color: var(--color-bg);
+    overflow: hidden;
+    isolation: isolate;
+}
+
+/* --------------------------------------------------------------------------
+   3. AMBIENT BACKGROUND & DECORATION
+   -------------------------------------------------------------------------- */
+.ambient-glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(120px);
+    z-index: -2;
+    pointer-events: none;
+    opacity: 0.6;
+    animation: ambientPulse 8s ease-in-out infinite alternate;
+}
+
+.glow-top-left {
+    top: -10%;
+    left: -10%;
+    width: 50vw;
+    height: 50vw;
+    background: radial-gradient(circle, rgba(var(--primary-rgb), 0.35) 0%, rgba(0, 0, 0, 0) 70%);
+}
+
+.glow-bottom-right {
+    bottom: -10%;
+    right: -10%;
+    width: 50vw;
+    height: 50vw;
+    background: radial-gradient(circle, rgba(var(--accent-rgb), 0.3) 0%, rgba(0, 0, 0, 0) 70%);
+    animation-delay: -4s;
+}
+
+/* Modern Grid Overlay Pattern */
+.grid-overlay {
+    position: absolute;
+    inset: 0;
+    background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    z-index: -1;
+    mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 75%);
+    -webkit-mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 75%);
+}
+
+[data-theme="light"] .grid-overlay {
+    background-image: 
+        linear-gradient(to right, rgba(236, 72, 153, 0.07) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(236, 72, 153, 0.07) 1px, transparent 1px);
+}
+
+/* --------------------------------------------------------------------------
+   THEME TOGGLE BUTTON
+   -------------------------------------------------------------------------- */
+.theme-toggle-btn {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.55rem 1.1rem;
+    background: rgba(var(--card-rgb), 0.7);
+    border: var(--border-glass);
+    border-radius: var(--radius-full);
+    color: var(--color-text);
+    font-family: var(--font-main);
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: var(--shadow-soft);
+    z-index: 100;
+    transition: all var(--transition-normal);
+}
+
+.theme-toggle-btn:hover {
+    transform: translateY(-2px);
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+    box-shadow: var(--glow-accent);
+}
+
+.sun-icon { display: block; }
+.moon-icon { display: none; }
+
+[data-theme="light"] .sun-icon { display: none; }
+[data-theme="light"] .moon-icon { display: block; color: var(--color-primary); }
+
+/* --------------------------------------------------------------------------
+   4. LAYOUT GRID
+   -------------------------------------------------------------------------- */
+.hero-container {
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* --------------------------------------------------------------------------
+   5. LEFT COLUMN: TYPOGRAPHY & BUTTONS
+   -------------------------------------------------------------------------- */
+.hero-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+
+/* Main Name */
+.hero-name {
+    font-size: clamp(2.8rem, 5vw, 4.2rem);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--color-text);
+}
+
+.text-gradient {
+    background: linear-gradient(135deg, var(--color-text) 0%, var(--color-accent) 50%, var(--color-primary) 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 6s ease infinite alternate;
+}
+
+/* Role Typing Animation Container */
+.hero-role-container {
+    display: flex;
+    align-items: center;
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    font-weight: 600;
+    color: var(--color-gray);
+    min-height: 2.5rem;
+}
+
+.role-prefix {
+    color: var(--color-gray);
+    margin-right: 0.4rem;
+}
+
+.typing-text {
+    color: var(--color-accent);
+    font-weight: 600;
+    background: linear-gradient(90deg, var(--color-accent), var(--color-primary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.typing-cursor {
+    display: inline-block;
+    width: 3px;
+    height: 1.2em;
+    background-color: var(--color-accent);
+    margin-left: 4px;
+    animation: blinkCursor 0.8s infinite;
+}
+
+/* Description Text */
+.hero-description {
+    font-size: 1.1rem;
+    color: var(--color-gray);
+    max-width: 540px;
+    line-height: 1.7;
+    font-weight: 400;
+}
+
+/* Action Buttons Container */
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 0.95rem 2rem;
+    font-family: var(--font-main);
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #6D28D9 100%);
+    color: var(--color-text);
+    box-shadow: 0 10px 25px -5px rgba(var(--primary-rgb), 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-primary) 100%);
+    opacity: 0;
+    z-index: -1;
+    transition: opacity var(--transition-normal);
+}
+
+.btn-primary:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px -5px rgba(var(--primary-rgb), 0.7), var(--glow-accent);
+}
+
+.btn-primary:hover::before {
+    opacity: 1;
+}
+
+.btn-secondary {
+    background: rgba(var(--card-rgb), 0.6);
+    color: var(--color-text);
+    border: var(--border-glass);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: var(--shadow-soft);
+}
+
+.btn-secondary:hover {
+    background: rgba(var(--card-rgb), 0.9);
+    border-color: rgba(var(--accent-rgb), 0.4);
+    color: var(--color-accent);
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(var(--accent-rgb), 0.2);
+}
+
+.btn-icon {
+    transition: transform var(--transition-bounce);
+}
+
+.btn:hover .btn-icon {
+    transform: translateY(-2px) translateX(2px);
+}
+
+/* --------------------------------------------------------------------------
+   6. RIGHT COLUMN: PROFILE CARD & FLOATING SKILLS
+   -------------------------------------------------------------------------- */
+.hero-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+}
+
+.profile-card {
+    position: relative;
+    width: 100%;
+    max-width: 440px;
+    height: 480px;
+    background: linear-gradient(145deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.8) 100%);
+    border: var(--border-glass);
+    border-radius: var(--radius-lg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: var(--shadow-glass), 0 0 50px rgba(var(--primary-rgb), 0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5rem;
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.profile-card:hover {
+    box-shadow: var(--shadow-glass), var(--glow-primary);
+}
+
+/* Glass Shine Effect */
+.glass-shine {
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius-lg);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 50%);
+    pointer-events: none;
+}
+
+.card-border-glow {
+    position: absolute;
+    inset: -1px;
+    border-radius: calc(var(--radius-lg) + 1px);
+    background: linear-gradient(135deg, rgba(var(--accent-rgb), 0.4), transparent 40%, transparent 60%, rgba(var(--primary-rgb), 0.4));
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+/* Avatar Container & Glowing Orbit */
+.avatar-container {
+    position: relative;
+    width: 160px;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatar-glowing-ring {
+    position: absolute;
+    inset: -12px;
+    border-radius: 50%;
+    background: conic-gradient(from 0deg, var(--color-primary), var(--color-accent), var(--color-primary));
+    animation: rotateRing 10s linear infinite;
+    filter: blur(10px);
+    opacity: 0.75;
+}
+
+.avatar-circle {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1E1B4B 0%, #0F172A 100%);
+    border: 3px solid rgba(255, 255, 255, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.6), 0 8px 25px rgba(0, 0, 0, 0.4);
+    z-index: 2;
+    transition: transform var(--transition-bounce);
+    overflow: hidden;
+}
+
+.avatar-circle:hover {
+    transform: scale(1.05);
+}
+
+.avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* --------------------------------------------------------------------------
+   7. FLOATING SKILL CARDS
+   -------------------------------------------------------------------------- */
+.skill-card {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.6rem 1.1rem;
+    background: rgba(30, 41, 59, 0.75);
+    border: var(--border-glass);
+    border-radius: var(--radius-md);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3), 0 0 15px rgba(var(--primary-rgb), 0.1);
+    z-index: 10;
+    transition: all var(--transition-normal);
+    cursor: pointer;
+    user-select: none;
+}
+
+.skill-card:hover {
+    transform: scale(1.1) translateY(-6px) !important;
+    background: rgba(30, 41, 59, 0.95);
+    border-color: rgba(var(--accent-rgb), 0.6);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), var(--glow-accent);
+    z-index: 20;
+}
+
+.skill-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: var(--radius-sm);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.html-icon { color: #E34F26; }
+.css-icon { color: #1572B6; }
+.js-icon { color: #F7DF1E; }
+.php-icon { color: #777BB4; }
+.csharp-icon { color: #239120; }
+.vibe-icon { color: var(--color-accent); }
+
+.skill-name {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--color-text);
+    letter-spacing: 0.02em;
+}
+
+/* Positioning Small Cards Around the Avatar */
+.skill-card-1 { top: 12%; left: -8%; }        /* HTML */
+.skill-card-2 { top: 8%; right: -8%; }        /* CSS */
+.skill-card-3 { top: 44%; right: -14%; }      /* JavaScript */
+.skill-card-4 { bottom: 14%; right: -6%; }     /* PHP */
+.skill-card-5 { bottom: 12%; left: -10%; }     /* C# */
+.skill-card-6 { top: 46%; left: -14%; }       /* Vibe Coding */
+
+/* --------------------------------------------------------------------------
+   8. ANIMATIONS & KEYFRAMES
+   -------------------------------------------------------------------------- */
+/* Floating Animations */
+.float-anim-1 {
+    animation: floatOne 6s ease-in-out infinite alternate;
+}
+
+.float-anim-2 {
+    animation: floatTwo 7s ease-in-out infinite alternate;
+}
+
+.float-anim-3 {
+    animation: floatThree 8s ease-in-out infinite alternate;
+}
+
+@keyframes floatOne {
+    0% { transform: translateY(0px) rotate(0deg); }
+    100% { transform: translateY(-12px) rotate(2deg); }
+}
+
+@keyframes floatTwo {
+    0% { transform: translateY(0px) rotate(0deg); }
+    100% { transform: translateY(-16px) rotate(-3deg); }
+}
+
+@keyframes floatThree {
+    0% { transform: translateY(0px) rotate(0deg); }
+    100% { transform: translateY(-10px) rotate(3deg); }
+}
+
+/* Rotating Ring */
+@keyframes rotateRing {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Ambient Pulse */
+@keyframes ambientPulse {
+    0% { opacity: 0.4; transform: scale(1); }
+    100% { opacity: 0.7; transform: scale(1.15); }
+}
+
+/* Gradient Text Animation */
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+/* Cursor Blink */
+@keyframes blinkCursor {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Scroll Reveal States */
+.reveal-element {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-element.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --------------------------------------------------------------------------
+   9. RESPONSIVE DESIGN
+   -------------------------------------------------------------------------- */
+/* Tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .hero-container {
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
+        text-align: center;
+    }
+
+    .hero-left {
+        align-items: center;
+    }
+
+    .hero-description {
+        max-width: 600px;
+    }
+
+    .skill-card-1 { top: 5%; left: 0%; }
+    .skill-card-2 { top: 5%; right: 0%; }
+    .skill-card-3 { top: 45%; right: -5%; }
+    .skill-card-4 { bottom: 12%; right: 0%; }
+    .skill-card-5 { bottom: 12%; left: 0%; }
+    .skill-card-6 { top: 45%; left: -5%; }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 3rem 1.25rem;
+    }
+
+    .hero-container {
+        gap: 3rem;
+    }
+
+    /* Mobile order: Text content first, Avatar section below */
+    .hero-left {
+        order: 1;
+    }
+
+    .hero-right {
+        order: 2;
+    }
+
+    .hero-name {
+        font-size: 2.4rem;
+    }
+
+    .hero-role-container {
+        font-size: 1.25rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+    /* Full width buttons on mobile as requested */
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.9rem;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    /* Profile Card Mobile Scaling & Skills Adjustment */
+    .profile-card {
+        height: auto;
+        min-height: 420px;
+        padding: 2rem 1.5rem;
+    }
+
+    .avatar-container {
+        width: 130px;
+        height: 130px;
+    }
+
+    /* Wrap skill pills on mobile around/below card for clean responsive flow */
+    .skill-card {
+        padding: 0.45rem 0.85rem;
+    }
+
+    .skill-name {
+        font-size: 0.8rem;
+    }
+
+    .skill-card-1 { top: 6%; left: -2%; }
+    .skill-card-2 { top: 6%; right: -2%; }
+    .skill-card-3 { top: 42%; right: -6%; }
+    .skill-card-4 { bottom: 15%; right: 2%; }
+    .skill-card-5 { bottom: 15%; left: 2%; }
+    .skill-card-6 { top: 42%; left: -6%; }
+}
+
+/* Small Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+    .profile-card {
+        min-height: 440px;
+    }
+
+    .skill-card-1 { top: 4%; left: 0%; }
+    .skill-card-2 { top: 4%; right: 0%; }
+    .skill-card-3 { top: 38%; right: -8%; }
+    .skill-card-4 { bottom: 14%; right: 0%; }
+    .skill-card-5 { bottom: 14%; left: 0%; }
+    .skill-card-6 { top: 38%; left: -8%; }
+}
