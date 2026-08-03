@@ -1,0 +1,171 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Segoe UI, sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:#0a0f1f;
+    color:white;
+    transition:.4s;
+}
+
+.about{
+    padding:50px 10%;
+}
+
+.title{
+    text-align:center;
+    font-size:4rem;
+    margin-bottom:50px;
+    background:linear-gradient(45deg,#6c63ff,#b26cff);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.container{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:80px;
+    flex-wrap:wrap;
+}
+
+.image-box{
+    width:350px;
+    height:350px;
+    border-radius:50%;
+    overflow:hidden;
+    border:5px solid #6c63ff;
+    animation:float 4s infinite ease-in-out;
+    box-shadow:0 0 40px #6c63ff;
+}
+
+.image-box img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.right{
+    max-width:600px;
+    animation:slide .8s ease;
+}
+
+.right h2{
+    font-size:3rem;
+    margin-bottom:10px;
+}
+
+.info{
+    display:flex;
+    gap:15px;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.exp{
+    background:#182446;
+    padding:8px 15px;
+    border-radius:20px;
+}
+
+.right h3{
+    color:#8d82ff;
+    margin-bottom:15px;
+}
+
+.right p{
+    line-height:1.8;
+    margin-bottom:25px;
+}
+
+.skills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-bottom:25px;
+}
+
+.skills h3{
+    width:100%;
+}
+
+.skill{
+    padding:10px 18px;
+    background:#182446;
+    border-radius:8px;
+    transition:.3s;
+}
+
+.skill:hover{
+    transform:translateY(-5px);
+    background:#6c63ff;
+}
+
+#experienceBtn,
+.project-btn{
+    display:inline-block;
+    padding:12px 25px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    background:linear-gradient(45deg,#6c63ff,#a855f7);
+    color:white;
+    text-decoration:none;
+    margin-top:10px;
+}
+
+#experienceBox{
+    display:none;
+    margin-top:20px;
+    background:#182446;
+    padding:20px;
+    border-radius:10px;
+}
+
+#experienceBox ul{
+    padding-left:20px;
+}
+
+#experienceBox li{
+    margin:10px 0;
+}
+
+@keyframes float{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-15px);
+    }
+}
+
+@keyframes slide{
+    from{
+        opacity:0;
+        transform:translateX(50px);
+    }
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+
+@media(max-width:768px){
+
+    .title{
+        font-size:2.5rem;
+    }
+
+    .image-box{
+        width:250px;
+        height:250px;
+    }
+
+    .right h2{
+        font-size:2rem;
+    }
+}
