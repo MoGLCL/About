@@ -1,81 +1,27 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mohamed Sherif</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Outfit:wght@400;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-
-
-    <section class="about">
-
-        <h1 class="title">About Me</h1>
-
-        <div class="container">
-
-            <div class="left">
-                <div class="image-box">
-                    <img src="avatar.png" alt="Mohamed Sherif">
-                </div>
-            </div>
-
-            <div class="right">
-
-                <h2>Mohamed Sherif</h2>
-
-                <div class="info">
-                    <span>Front-End Developer</span>
-                    <span class="exp"> Learning Experience</span>
-                </div>
-
-                <h3>Basic Of PHP & MySQL</h3>
-
-                <p>
-                    Passionate Front-End Developer with experience in HTML,
-                    CSS, JavaScript, Bootstrap and Git/GitHub.
-                    Currently learning React and improving my backend
-                    knowledge using PHP and MySQL.
-                </p>
-
-                <div class="skills">
-                    <h3>Skills</h3>
-
-                    <div class="skill">HTML</div>
-                    <div class="skill">CSS</div>
-                    <div class="skill">JavaScript</div>
-                    <div class="skill">Bootstrap</div>
-                    <div class="skill">React</div>
-                    <div class="skill">Git & GitHub</div>
-                    <div class="skill">PHP Basics</div>
-                    <div class="skill">MySQL Basics</div>
-                </div>
-
-                <button id="experienceBtn">
-                    Show Experience
-                </button>
-
-                <div id="experienceBox">
-                    <ul>
-                        <li>Built Todo List Application</li>
-                        <li>Developed CRUD Application</li>
-                        <li>Created Prayer Time App using API</li>
-                        <li>Learning React</li>
-                    </ul>
-                </div>
-
-                <a href="https://github.com/m7medsh-2005" class="project-btn">
-                    View My Projects →
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <script src="script.js"></script>
-
+  <div class="bg">
+    <div class="grid"></div>
+    <div class="noise"></div>
+  </div>
+  <div id="bubbles-layer"></div>
+  <main class="hero">
+    <div class="headline"><span id="typed"></span><span class="cursor">_</span></div>
+  </main>
+  <script src="script.js"></script>
 </body>
+
 </html>
