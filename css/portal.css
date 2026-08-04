@@ -1,0 +1,539 @@
+/*
+   Multiverse Portal Hub CSS - Harmonious Warm Espresso & Mahogany Edition
+*/
+
+:root {
+    --bg-dark: #14100d; /* Warm Deep Espresso */
+    --card-bg: #1c1612; /* Deep Teak Frame */
+    --panel-bg: linear-gradient(135deg, #3d2319 0%, #24140d 100%);
+    --wood-border: #523324;
+    --brass: #c5a059; /* Antique Gold/Brass */
+    --brass-bright: #e6c687;
+    --brass-glow: rgba(197, 160, 89, 0.25);
+    --ink: #f5f0e6; /* Warm Cream */
+    --muted: #a89a8b; /* Warm Sand Muted */
+    --border: rgba(197, 160, 89, 0.18);
+    --border-hover: rgba(197, 160, 89, 0.5);
+    --radius: 16px;
+    --transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--ink);
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+    direction: ltr;
+    text-align: left;
+    line-height: 1.6;
+}
+
+/* Harmonious Warm Ambient Glow */
+.ambient-glow {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 900px;
+    height: 900px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(197, 160, 89, 0.08), transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Header */
+.portal-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(20, 16, 13, 0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 0;
+}
+
+.header-shell {
+    width: min(1200px, calc(100% - 48px));
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.brand-zone {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.portal-logo-ring {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: rgba(197, 160, 89, 0.12);
+    border: 1px solid var(--brass);
+    color: var(--brass-bright);
+    display: grid;
+    place-items: center;
+    font-size: 20px;
+    box-shadow: 0 0 15px var(--brass-glow);
+}
+
+.brand-titles h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1;
+}
+
+.brand-titles h1 span {
+    color: var(--brass-bright);
+}
+
+.mono-sub {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 4px;
+}
+
+/* Header Controls */
+.controls-zone {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.search-box {
+    position: relative;
+    width: 260px;
+}
+
+.search-box i {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 9px 14px 9px 38px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: var(--ink);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 13px;
+    outline: none;
+    transition: var(--transition);
+}
+
+.search-box input:focus {
+    border-color: var(--brass);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.ctrl-btn {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border);
+    color: var(--ink);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--transition);
+}
+
+.ctrl-btn:hover {
+    background: var(--brass);
+    color: #14100d;
+    border-color: var(--brass);
+    box-shadow: 0 0 15px var(--brass-glow);
+}
+
+/* Hero Section */
+.portal-hero {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 45px 20px 15px;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    padding: 5px 14px;
+    border-radius: 999px;
+    background: rgba(197, 160, 89, 0.08);
+    border: 1px solid var(--border);
+    color: var(--brass-bright);
+    margin-bottom: 14px;
+}
+
+.pulse-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--brass-bright);
+    box-shadow: 0 0 8px var(--brass-bright);
+}
+
+.portal-hero h2 {
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.25;
+    margin-bottom: 10px;
+}
+
+.portal-hero em {
+    font-style: normal;
+    color: var(--brass-bright);
+}
+
+.portal-hero p {
+    color: var(--muted);
+    font-size: 0.95rem;
+    max-width: 580px;
+    margin: 0 auto;
+}
+
+/* Portal Grid Section */
+.portal-grid-section {
+    position: relative;
+    z-index: 1;
+    width: min(1200px, calc(100% - 48px));
+    margin: 36px auto 70px;
+}
+
+.portal-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 24px;
+    perspective: 1000px;
+}
+
+/* Harmonious Door Card Shell */
+.portal-card {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    transition: border-color var(--transition), transform 0.35s;
+    position: relative;
+}
+
+.portal-card:hover {
+    border-color: var(--border-hover);
+    transform: translateY(-4px);
+}
+
+/* 3D Door Frame */
+.card-inner {
+    width: 100%;
+    height: 350px;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    perspective: 1000px;
+    background: #0e0a08;
+    border: 3px solid #2d1b13;
+}
+
+/* Render Chamber (Behind Door) */
+.render-chamber {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #0e0a08;
+    overflow: hidden;
+}
+
+/* Live Responsive Iframe Container */
+.iframe-wrapper {
+    position: absolute;
+    width: 1000px;
+    height: 1200px;
+    top: 0;
+    left: 0;
+    transform: scale(0.27);
+    transform-origin: top left;
+    pointer-events: auto;
+    transition: opacity 0.4s ease;
+    opacity: 0.9;
+}
+
+.portal-card:hover .iframe-wrapper {
+    opacity: 1;
+}
+
+.iframe-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: #ffffff;
+    pointer-events: none;
+}
+
+/* HARMONIOUS MAHOGANY WOODEN DOOR PANEL */
+.door-panel {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    transform-origin: left center;
+    transform-style: preserve-3d;
+    transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+}
+
+/* SWING OPEN DOOR ON HOVER */
+.portal-card:hover .door-panel {
+    transform: rotateY(105deg);
+}
+
+.door-front {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--panel-bg),
+                repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.16) 0px, rgba(0, 0, 0, 0.16) 2px, transparent 2px, transparent 42px);
+    background-blend-mode: overlay;
+    border: 2px solid var(--wood-border);
+    border-radius: 9px;
+    padding: 22px 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.7), 0 8px 20px rgba(0,0,0,0.5);
+    backface-visibility: hidden;
+}
+
+.door-status {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--brass-bright);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.door-status i {
+    font-size: 7px;
+}
+
+/* Brass Engraved Nameplate */
+.door-engraving {
+    background: linear-gradient(145deg, #c5a059, #e6c687);
+    border: 1px solid #7d5e20;
+    border-radius: 8px;
+    padding: 12px 16px;
+    text-align: center;
+    box-shadow: inset 0 2px 4px rgba(255,255,255,0.5), 0 4px 10px rgba(0,0,0,0.4);
+}
+
+.door-engraving h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #1a1209;
+    letter-spacing: -0.01em;
+}
+
+.door-engraving p {
+    font-size: 0.8rem;
+    color: #4a341b;
+    font-weight: 600;
+}
+
+/* Brass Door Handle */
+.door-handle {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 52px;
+    border-radius: 999px;
+    background: linear-gradient(180deg, #e6c687, #c5a059, #6e501a);
+    border: 1px solid #ffd700;
+    box-shadow: 0 0 10px var(--brass-glow), 2px 4px 8px rgba(0,0,0,0.6);
+}
+
+.door-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 10px;
+    color: rgba(245, 240, 230, 0.6);
+}
+
+/* Card Bottom Meta & Enter Action */
+.card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.meta-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--ink);
+}
+
+.enter-btn {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 8px;
+    background: rgba(197, 160, 89, 0.12);
+    border: 1px solid var(--brass);
+    color: var(--brass-bright);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: var(--transition);
+}
+
+.enter-btn:hover {
+    background: var(--brass);
+    color: #14100d;
+    transform: translateX(3px);
+}
+
+/* Footer */
+.portal-footer {
+    position: relative;
+    z-index: 1;
+    border-top: 1px solid var(--border);
+    background: rgba(20, 16, 13, 0.92);
+    padding: 24px 0;
+    font-size: 0.85rem;
+    color: var(--muted);
+    text-align: center;
+}
+
+.footer-shell {
+    width: min(1200px, calc(100% - 48px));
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.footer-shell b {
+    color: var(--brass-bright);
+}
+
+/* Transition Overlay */
+.warp-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: #14100d;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.warp-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.warp-msg {
+    text-align: center;
+    color: var(--brass-bright);
+}
+
+.warp-msg i {
+    font-size: 2.8rem;
+    margin-bottom: 12px;
+}
+
+.warp-msg h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.6rem;
+    color: var(--ink);
+}
+
+.warp-msg p {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.95rem;
+    color: var(--brass-bright);
+    margin-top: 4px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header-shell {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .controls-zone {
+        flex-wrap: wrap;
+    }
+    .search-box {
+        width: 100%;
+    }
+    .portal-grid {
+        grid-template-columns: 1fr;
+    }
+    .card-inner {
+        height: 320px;
+    }
+    .footer-shell {
+        flex-direction: column;
+        text-align: center;
+    }
+}
