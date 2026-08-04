@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiverse Portal Hub | Portfolio Gateway</title>
+    
+    <!-- Meta Descriptions -->
+    <meta name="description" content="An interactive portal gateway featuring 3D wooden doors with live website previews on hover.">
+    <meta name="theme-color" content="#14100d">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome 6.5.1 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Custom Portal CSS -->
+    <link rel="stylesheet" href="css/portal.css">
+</head>
+<body>
+
+    <!-- Ambient Glow Backdrop -->
+    <div class="ambient-glow"></div>
+
+    <!-- Main Navigation Header -->
+    <header class="portal-header">
+        <div class="header-shell">
+            <!-- Search & Controls -->
+            <div class="controls-zone">
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="portalSearch" placeholder="Search website by name..." autocomplete="off">
+                </div>
+
+                <button class="ctrl-btn" id="randomPortalBtn" title="Warp to Random Website">
+                    <i class="fa-solid fa-shuffle"></i>
+                    <span>Random Door</span>
+                </button>
+
+                <button class="ctrl-btn sfx-btn" id="sfxToggleBtn" title="Toggle Sound FX">
+                    <i class="fa-solid fa-volume-high"></i>
+                    <span id="sfxLabel">SFX: ON</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Announcement Banner -->
+    <section class="portal-hero">
+        <div class="hero-content">
+            <h2>Choose a <em>Door</em> & Peek Inside</h2>
+            <p>Hover over any wooden door to hear it creak open and reveal a live rendered preview of the website • Click to enter!</p>
+        </div>
+    </section>
+
+    <!-- Portal Doors Grid Section -->
+    <main class="portal-grid-section">
+        <div class="portal-grid" id="portalGrid">
+
+            <!-- Portal Door 1: MoGlitch -->
+            <div class="portal-card" data-name="moglitch mohamed wael" data-url="./MoGlitch/index.html">
+                <div class="card-inner">
+                    <div class="render-chamber">
+                        <div class="iframe-wrapper">
+                            <iframe src="./MoGlitch/index.html" loading="lazy" title="MoGlitch Portfolio Preview"></iframe>
+                        </div>
+                    </div>
+
+                    <div class="door-panel">
+                        <div class="door-front">
+                            <div class="door-status"><i class="fa-solid fa-circle"></i> ONLINE</div>
+                            <div class="door-engraving">
+                                <h3>MoGlitch</h3>
+                                <p>Mohamed Wael</p>
+                            </div>
+                            <div class="door-handle"></div>
+                            <div class="door-footer">
+                                <span>PORTAL 01</span>
+                                <span>HOVER TO OPEN 🚪</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-meta">
+                    <div class="meta-title">MoGlitch Portfolio</div>
+                    <a href="./MoGlitch/index.html" class="enter-btn">
+                        <span>Enter Door</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Portal Door 2: Aya Samir -->
+            <div class="portal-card" data-name="aya samir" data-url="./Aya Samir/index.html">
+                <div class="card-inner">
+                    <div class="render-chamber">
+                        <div class="iframe-wrapper">
+                            <iframe src="./Aya Samir/index.html" loading="lazy" title="Aya Samir Portfolio Preview"></iframe>
+                        </div>
+                    </div>
+
+                    <div class="door-panel">
+                        <div class="door-front">
+                            <div class="door-status"><i class="fa-solid fa-circle"></i> ONLINE</div>
+                            <div class="door-engraving">
+                                <h3>Aya Samir</h3>
+                                <p>Developer</p>
+                            </div>
+                            <div class="door-handle"></div>
+                            <div class="door-footer">
+                                <span>PORTAL 02</span>
+                                <span>HOVER TO OPEN 🚪</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-meta">
+                    <div class="meta-title">Aya Samir Portfolio</div>
+                    <a href="./Aya Samir/index.html" class="enter-btn">
+                        <span>Enter Door</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Portal Door 3: Ghada Aboelnaga -->
+            <div class="portal-card" data-name="ghada aboelnaga" data-url="./Ghada aboelnaga/index.html">
+                <div class="card-inner">
+                    <div class="render-chamber">
+                        <div class="iframe-wrapper">
+                            <iframe src="./Ghada aboelnaga/index.html" loading="lazy" title="Ghada Aboelnaga Portfolio Preview"></iframe>
+                        </div>
+                    </div>
+
+                    <div class="door-panel">
+                        <div class="door-front">
+                            <div class="door-status"><i class="fa-solid fa-circle"></i> ONLINE</div>
+                            <div class="door-engraving">
+                                <h3>Ghada Aboelnaga</h3>
+                                <p>Developer</p>
+                            </div>
+                            <div class="door-handle"></div>
+                            <div class="door-footer">
+                                <span>PORTAL 03</span>
+                                <span>HOVER TO OPEN 🚪</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-meta">
+                    <div class="meta-title">Ghada Aboelnaga Portfolio</div>
+                    <a href="./Ghada aboelnaga/index.html" class="enter-btn">
+                        <span>Enter Door</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Portal Door 4: Mohamed Sherif -->
+            <div class="portal-card" data-name="mohamed sherif" data-url="./Mohamed-Sherif/index.html">
+                <div class="card-inner">
+                    <div class="render-chamber">
+                        <div class="iframe-wrapper">
+                            <iframe src="./Mohamed-Sherif/index.html" loading="lazy" title="Mohamed Sherif Portfolio Preview"></iframe>
+                        </div>
+                    </div>
+
+                    <div class="door-panel">
+                        <div class="door-front">
+                            <div class="door-status"><i class="fa-solid fa-circle"></i> ONLINE</div>
+                            <div class="door-engraving">
+                                <h3>Mohamed Sherif</h3>
+                                <p>Developer</p>
+                            </div>
+                            <div class="door-handle"></div>
+                            <div class="door-footer">
+                                <span>PORTAL 04</span>
+                                <span>HOVER TO OPEN 🚪</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-meta">
+                    <div class="meta-title">Mohamed Sherif Portfolio</div>
+                    <a href="./Mohamed-Sherif/index.html" class="enter-btn">
+                        <span>Enter Door</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Portal Door 5: Yasmin Ali -->
+            <div class="portal-card" data-name="yasmin ali" data-url="./Yasmin Ali/index.html">
+                <div class="card-inner">
+                    <div class="render-chamber">
+                        <div class="iframe-wrapper">
+                            <iframe src="./Yasmin Ali/index.html" loading="lazy" title="Yasmin Ali Portfolio Preview"></iframe>
+                        </div>
+                    </div>
+
+                    <div class="door-panel">
+                        <div class="door-front">
+                            <div class="door-status"><i class="fa-solid fa-circle"></i> ONLINE</div>
+                            <div class="door-engraving">
+                                <h3>Yasmin Ali</h3>
+                                <p>Developer</p>
+                            </div>
+                            <div class="door-handle"></div>
+                            <div class="door-footer">
+                                <span>PORTAL 05</span>
+                                <span>HOVER TO OPEN 🚪</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-meta">
+                    <div class="meta-title">Yasmin Ali Portfolio</div>
+                    <a href="./Yasmin Ali/index.html" class="enter-btn">
+                        <span>Enter Door</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Portal Door 6: Menna Hassan -->
+            <div class="portal-card" data-name="menna hassan" data-url="./menna hassan/index.html">
+                <div class="card-inner">
+                    <div class="render-chamber">
+                        <div class="iframe-wrapper">
+                            <iframe src="./menna hassan/index.html" loading="lazy" title="Menna Hassan Portfolio Preview"></iframe>
+                        </div>
+                    </div>
+
+                    <div class="door-panel">
+                        <div class="door-front">
+                            <div class="door-status"><i class="fa-solid fa-circle"></i> ONLINE</div>
+                            <div class="door-engraving">
+                                <h3>Menna Hassan</h3>
+                                <p>Developer</p>
+                            </div>
+                            <div class="door-handle"></div>
+                            <div class="door-footer">
+                                <span>PORTAL 06</span>
+                                <span>HOVER TO OPEN 🚪</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-meta">
+                    <div class="meta-title">Menna Hassan Portfolio</div>
+                    <a href="./menna hassan/index.html" class="enter-btn">
+                        <span>Enter Door</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Portal Door 7: Nour -->
+            <div class="portal-card" data-name="nour" data-url="./nour/index.html">
+                <div class="card-inner">
+                    <div class="render-chamber">
+                        <div class="iframe-wrapper">
+                            <iframe src="./nour/index.html" loading="lazy" title="Nour Portfolio Preview"></iframe>
+                        </div>
+                    </div>
+
+                    <div class="door-panel">
+                        <div class="door-front">
+                            <div class="door-status"><i class="fa-solid fa-circle"></i> ONLINE</div>
+                            <div class="door-engraving">
+                                <h3>Nour</h3>
+                                <p>Developer</p>
+                            </div>
+                            <div class="door-handle"></div>
+                            <div class="door-footer">
+                                <span>PORTAL 07</span>
+                                <span>HOVER TO OPEN 🚪</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-meta">
+                    <div class="meta-title">Nour Portfolio</div>
+                    <a href="./nour/index.html" class="enter-btn">
+                        <span>Enter Door</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Portal Door 8: Sarah Essam -->
+            <div class="portal-card" data-name="sarah essam" data-url="./sarah essam/index.html">
+                <div class="card-inner">
+                    <div class="render-chamber">
+                        <div class="iframe-wrapper">
+                            <iframe src="./sarah essam/index.html" loading="lazy" title="Sarah Essam Portfolio Preview"></iframe>
+                        </div>
+                    </div>
+
+                    <div class="door-panel">
+                        <div class="door-front">
+                            <div class="door-status"><i class="fa-solid fa-circle"></i> ONLINE</div>
+                            <div class="door-engraving">
+                                <h3>Sarah Essam</h3>
+                                <p>Developer</p>
+                            </div>
+                            <div class="door-handle"></div>
+                            <div class="door-footer">
+                                <span>PORTAL 08</span>
+                                <span>HOVER TO OPEN 🚪</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-meta">
+                    <div class="meta-title">Sarah Essam Portfolio</div>
+                    <a href="./sarah essam/index.html" class="enter-btn">
+                        <span>Enter Door</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="portal-footer">
+        <div class="footer-shell">
+            <p>© 2026 Multiverse Portal Hub • Designed by <b>MoGlitch (Mohamed Wael)</b></p>
+            <p>Faculty of Specific Education • Mansoura University</p>
+        </div>
+    </footer>
+
+    <!-- Fullscreen Teleport Transition Overlay -->
+    <div class="warp-overlay" id="warpOverlay">
+        <div class="warp-msg">
+            <i class="fa-solid fa-door-open fa-fade"></i>
+            <h2>Opening Wooden Door...</h2>
+            <p id="warpTargetName">Dest: Portfolio</p>
+        </div>
+    </div>
+
+    <!-- GSAP 3.12.5 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+    <!-- Custom Portal Script -->
+    <script src="js/portal.js"></script>
+</body>
+</html>
